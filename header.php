@@ -24,6 +24,15 @@
 	
 	<ul class="nav navbar-nav navbar-right">
 <?php
+    require('db.php');
+        // prepare the query
+        $sql = "SELECT * FROM pages ORDER BY pageName";
+        $cmd = $conn->prepare($sql);
+        // run the query and store the results
+        $cmd->execute();
+        $pages = $cmd->fetchAll();
+        // disconnect
+        $conn = null;
 	session_start();	
 		if (!empty($_SESSION['user_id'])) {
 			// private nav links
