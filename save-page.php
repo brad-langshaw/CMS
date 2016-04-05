@@ -4,7 +4,6 @@ require_once ('header.php');
 // store the inputs into variables
 $pageName = $_POST['pageName'];
 $content = $_POST['content'];
-$imageName = $_POST['pageImage'];
 $filename = $_FILES['pageImage']['name'];
 $filesize = $_FILES['pageImage']['size'];
 $filetype = $_FILES['pageImage']['type'];
