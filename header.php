@@ -40,9 +40,9 @@
 			echo '<li><a href="addpage.php" title="Add">Add Page</a></li>
 				 <li><a href="userlistings.php" title="List">User Listings</a></li>
 				 <li><a href="logout.php" title="Logout">Logout</a></li>';
-            foreach($pages as $page){
-                echo '<li><a href="main.php?page_id=' . $page['page_id'] . '" title=' . $page['pageName'] .'>' . $page['pageName'] . '</a></li>';
-            }
+            (foreach($pages as $page){
+                echo '<li><a href="main.php?page_id=' . $page['page_id'] . '" title="' . $page['pageName'] .'">' . $page['pageName'] . '</a></li>';
+            })
                  
 		}
 		else{
