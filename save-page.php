@@ -29,12 +29,11 @@ if ($ok) {
     // connect
     require_once ('db.php');
     // set up the sql insert
-    $sql = "INSERT INTO pages (pageName, content, imageName) VALUES (:pageName, :content, :imageName)";
+    $sql = "INSERT INTO pages (pageName, content) VALUES (:pageName, :content)";
     // fill the params and execute
     $cmd = $conn->prepare($sql);
     $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
     $cmd->bindParam(':content', $content, PDO::PARAM_STR, 1000);
-    $cmd->bindParam(':imageName', $imageName, PDO::PARAM_STR, 25);
     $cmd->execute();
     // disconnect
     $conn = null;
