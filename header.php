@@ -19,7 +19,7 @@
 <body>
 <nav class="navbar navbar-default">
 	<a href="default.php" title="COMP1006 Assighment 2 Part 1" class="navbar-brand">
-		<i class="fa fa-viacoin fa-2x"></i>COMP1006 Assignment 2 Part 1
+		<i class="fa fa-viacoin fa-2x"></i>COMP1006 Assignment 2 Part 2
 	</a>
 	
 	<ul class="nav navbar-nav navbar-right">
@@ -33,6 +33,7 @@
         $pages = $cmd->fetchAll();
         // disconnect
         $conn = null;
+        
 	session_start();	
 		if (!empty($_SESSION['user_id'])) {
 			// private nav links
