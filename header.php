@@ -49,7 +49,7 @@
              while($row = mysql_fetch_array($page))
         {
          $page_id = $row['page'];
-            echo '<a href="main.php?page_id='.strip_tags($page_id)'"> target="_BLANK"'.'</a>';
+            echo '<a href="main.php?page_id='.strip_tags($page_id)'" pageName="_BLANK"'.'</a>';
             }
 		}
 		else{
