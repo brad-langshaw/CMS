@@ -4,7 +4,9 @@ $page_title = "test";
 
 
 
-require_once('header.php'); ?>
+require_once('header.php');
+
+    $page_id = $GET['page']; ?>
 
 
 <h1>Main</h1>
@@ -25,6 +27,8 @@ try {
     echo '<table class="table table-striped"><thead><th>ID#</th><th>Page name</th><th>Content</th><th>Edit</th><th>Delete</th></thead><tbody>';
     /* loop through the data, displaying each value in a new column
     and each beer in a new row */
+    
+
     foreach ($pages as $page) {
         echo '<tr><td>' . $page['page_id'] . '</td>
             <td>' . $page['pageName'] . '</td>

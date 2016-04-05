@@ -40,10 +40,11 @@
 			echo '<li><a href="addpage.php" title="Add">Add Page</a></li>
 				 <li><a href="userlistings.php" title="List">User Listings</a></li>
 				 <li><a href="logout.php" title="Logout">Logout</a></li>';
-            (foreach($pages as $page){
-                echo '<li><a href="main.php?page_id=' . $page['page_id'] . '" title="' . $page['pageName'] .'">' . $page['pageName'] . '</a></li>';
-            })
-                 
+             while($row = mysql_fetch_array($page))
+        {
+         $page_id = $row['page'];
+            echo '<a href="main.php?page_id='.strip_tags($page_id)'" target="_BLANK"'.'</a>';
+            }
 		}
 		else{
 			//public links
