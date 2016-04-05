@@ -26,9 +26,10 @@
 <?php
     require('db.php');
         // prepare the query
-        $sql = "SELECT * FROM pages ORDER BY pageName";
+        $sql = "SELECT * FROM pages ORDER BY page_id";
         $cmd = $conn->prepare($sql);
         // run the query and store the results
+        $page_id = 'default';
         $cmd->bindParam(':page_id', $page_id, PDO::PARAM_INT);
         $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
         $cmd->bindParam(':content', $content, PDO::PARAM_STR, 1000);
