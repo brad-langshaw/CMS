@@ -30,9 +30,7 @@
         $cmd = $conn->prepare($sql);
         // run the query and store the results
         $page_id = 'default';
-        $cmd->bindParam(':page_id', $page_id, PDO::PARAM_INT);
-        $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
-        $cmd->bindParam(':content', $content, PDO::PARAM_STR, 1000);
+  
         $cmd->execute();
         $pages = $cmd->fetchAll();
         // disconnect
@@ -51,7 +49,7 @@
              while($row = mysql_fetch_array($page))
         {
          $page_id = $row['page'];
-            echo '<a href="main.php?page_id='.strip_tags($page_id).'"' target="_BLANK"'.'</a>';
+            echo '<a href="main.php?page_id='.strip_tags($page_id)'"> target="_BLANK"'.'</a>';
             }
 		}
 		else{
