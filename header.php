@@ -29,10 +29,17 @@
         $sql = "SELECT * FROM pages ORDER BY pageName";
         $cmd = $conn->prepare($sql);
         // run the query and store the results
+        $cmd->bindParam(':page_id', $page_id, PDO::PARAM_INT);
+        $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
+        $cmd->bindParam(':content', $content, PDO::PARAM_STR, 1000);
         $cmd->execute();
         $pages = $cmd->fetchAll();
         // disconnect
+       
+        
         $conn = null;
+        
+        
         
 	session_start();	
 		if (!empty($_SESSION['user_id'])) {
@@ -43,7 +50,7 @@
              while($row = mysql_fetch_array($page))
         {
          $page_id = $row['page'];
-            echo '<a href="main.php?page_id='.strip_tags($page_id)'"></a>';
+            echo '<a href="main.php?page_id='.strip_tags($page_id)'" target="_BLANK"'.'></a>';
             }
 		}
 		else{
