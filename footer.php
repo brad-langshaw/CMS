@@ -8,7 +8,7 @@
 	&copy; 2016 | COMP1006 Assignment 2 
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    Part 1 | Bradley Langshaw
+                    Part 2 | Bradley Langshaw
                 </div>
             </div>
         </div>
