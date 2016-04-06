@@ -45,7 +45,8 @@
 			// private nav links
 			echo '<li><a href="addpage.php" title="Add">Add Page</a></li>
 				 <li><a href="userlistings.php" title="List">User Listings</a></li>
-				 <li><a href="logout.php" title="Logout">Logout</a></li>';
+				 <li><a href="logout.php" title="Logout">Logout</a></li>
+                 <li><a href="main.php" title="Public Site">Public Site</a></li>';
              while($row =  mysql_fetch_array($pages)){
                     echo '<li><a href="main.php?page_id='.$row['page_id'].'">'.$row['pageName'].'</a></li>'; 
             }
