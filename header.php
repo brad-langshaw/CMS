@@ -38,9 +38,6 @@
         
         $conn = null;
         
-       
-        
-	session_start();	
 		if (!empty($_SESSION['user_id'])) {
 			// private nav links
 			echo '<li><a href="addpage.php" title="Add">Add Page</a></li>
