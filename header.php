@@ -26,13 +26,12 @@
 <?php
     require('db.php');
         // prepare the query
-        $sql = "SELECT * FROM pages ORDER BY page_id";
+        $sql = "SELECT page_id, pageName FROM pages ORDER BY page_id";
         $cmd = $conn->prepare($sql);
         // run the query and store the results
         $page_id = 'default';
         $cmd->bindParam(':page_id', $page_id, PDO::PARAM_INT);
         $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
-        $cmd->bindParam(':content', $content, PDO::PARAM_STR, 1000);
         $cmd->execute();
         $pages = $cmd->fetchAll();
         // disconnect
@@ -48,10 +47,8 @@
 			echo '<li><a href="addpage.php" title="Add">Add Page</a></li>
 				 <li><a href="userlistings.php" title="List">User Listings</a></li>
 				 <li><a href="logout.php" title="Logout">Logout</a></li>';
-             while($row = mysql_fetch_array($page))
-        {
-         $page_id = $row['page'];
-            echo '<a href="main.php?page_id='.strip_tags($page_id)'"> target="_BLANK"'.'</a>';
+             while($row = mysql_fetch_array($page)){
+                    echo '<li><a href="main.php?page_id='.$row['page_id'].'">'.$row['pageName'].'</a></li>'; 
             }
 		}
 		else{
