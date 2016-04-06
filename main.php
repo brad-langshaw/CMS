@@ -6,7 +6,7 @@ $page_title = "test";
 
 require_once('header.php');
 
-    $page_id = $GET['page']; ?>
+    $page_id = $GET['page_id']; ?>
 
 
 <h1>Main</h1>
