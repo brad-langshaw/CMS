@@ -2,7 +2,7 @@
 
 $page_title = 'User Listings';
 
-
+require_once('auth.php'); ?>
 require_once('header.php'); ?>
 
 
