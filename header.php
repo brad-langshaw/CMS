@@ -34,7 +34,7 @@
         $cmd->execute();
         $pages = $cmd->fetchAll();
         // disconnect
-        $row = mysql_fetch_array($pages)
+       
         
         $conn = null;
         
