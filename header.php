@@ -34,11 +34,11 @@
         $cmd->execute();
         $pages = $cmd->fetchAll();
         // disconnect
-       
+        $row = mysql_fetch_array($pages)
         
         $conn = null;
         
-        
+       
         
 	session_start();	
 		if (!empty($_SESSION['user_id'])) {
@@ -46,7 +46,7 @@
 			echo '<li><a href="addpage.php" title="Add">Add Page</a></li>
 				 <li><a href="userlistings.php" title="List">User Listings</a></li>
 				 <li><a href="logout.php" title="Logout">Logout</a></li>';
-             while($row = mysql_fetch_array($pages)){
+             while($row = $pages){
                     echo '<li><a href="main.php?page_id='.$row['page_id'].'">'.$row['pageName'].'</a></li>'; 
             }
 		}
