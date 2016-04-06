@@ -3,7 +3,7 @@
 $page_title = "test";
 
 
-
+require_once('auth.php');
 require_once('header.php');
 
     $page_id = $GET['page_id']; ?>
