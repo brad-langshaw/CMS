@@ -4,7 +4,7 @@
 <head>
 	<title>
 		<?php
-        
+        $page_id = $_POST['page_id'];
         echo $page_title; ?>
 	</title>
 	<meta content="text/html; charset=utf-8" http-equiv="content-type">
